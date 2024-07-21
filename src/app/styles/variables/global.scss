@@ -1,0 +1,143 @@
+@font-face {
+	font-family: 'Involve';
+	src: url('../src/assets/fonts/Involve-VF.ttf');
+}
+
+:root {
+	--font-family: 'Involve';
+
+	// Font-weights
+	--regular: 400;
+	--semibold: 600;
+	--bold: 700;
+
+	// h font
+	--font-size-h1: 96px;
+	--font-line-h1: 128px;
+	--font-h1: var(--semibold) var(--font-size-h1) / var(--font-line-h1)
+		var(--font-family);
+
+	--font-size-h2: 48px;
+	--font-line-h2: 64px;
+	--font-h2: var(--semibold) var(--font-size-h2) / var(--font-line-h2)
+		var(--font-family);
+
+	--font-size-h3: 40px;
+	--font-line-h3: 53px;
+	--font-h3: var(--semibold) var(--font-size-h3) / var(--font-line-h3)
+		var(--font-family);
+
+	--font-size-h4: 36px;
+	--font-line-h4: 48px;
+	--font-h4: var(--semibold) var(--font-size-h4) / var(--font-line-h4)
+		var(--font-family);
+
+	--font-size-h5: 32px;
+	--font-line-h5: 43px;
+	--font-h5: var(--semibold) var(--font-size-h5) / var(--font-line-h5)
+		var(--font-family);
+
+	--font-size-h6: 24px;
+	--font-line-h6: 32px;
+	--font-h6: var(--semibold) var(--font-size-h6) / var(--font-line-h6)
+		var(--font-family);
+
+	--font-size-h7: 20px;
+	--font-line-h7: 27px;
+	--font-h7: var(--semibold) var(--font-size-h7) / var(--font-line-h7)
+		var(--font-family);
+
+	--font-size-h8: 18px;
+	--font-line-h8: 24px;
+	--font-h8: var(--semibold) var(--font-size-h8) / var(--font-line-h8)
+		var(--font-family);
+
+	--font-size-h9: 16px;
+	--font-line-h9: 21px;
+	--font-h9: var(--semibold) var(--font-size-h9) / var(--font-line-h9)
+		var(--font-family);
+
+	--font-size-h10: 14px;
+	--font-line-h10: 19px;
+	--font-h10: var(--semibold) var(--font-size-h10) / var(--font-line-h10)
+		var(--font-family);
+
+	--font-size-h11: 12px;
+	--font-line-h11: 16px;
+	--font-h11: var(--semibold) var(--font-size-h11) / var(--font-line-h11)
+		var(--font-family);
+
+	--font-size-h12: 10px;
+	--font-line-h12: 13px;
+	--font-h12: var(--semibold) var(--font-size-h12) / var(--font-line-h12)
+		var(--font-family);
+
+	// p font
+	--font-size-p1: 48px;
+	--font-line-p1: 64px;
+	--font-p1: var(--regular) var(--font-size-p1) / var(--font-line-p1)
+		var(--font-family);
+
+	--font-size-p2: 40px;
+	--font-line-p2: 53px;
+	--font-p2: var(--regular) var(--font-size-p2) / var(--font-line-p2)
+		var(--font-family);
+
+	--font-size-p3: 32px;
+	--font-line-p3: 43px;
+	--font-p3: var(--regular) var(--font-size-p3) / var(--font-line-p3)
+		var(--font-family);
+
+	--font-size-p4: 20px;
+	--font-line-p4: 26px;
+	--font-p4: var(--regular) var(--font-size-p4) / var(--font-line-p4)
+		var(--font-family);
+
+	--font-size-p5: 18px;
+	--font-line-p5: 24px;
+	--font-p5: var(--regular) var(--font-size-p5) / var(--font-line-p5)
+		var(--font-family);
+
+	--font-size-p6: 16px;
+	--font-line-p6: 20px;
+	--font-p6: var(--regular) var(--font-size-p6) / var(--font-line-p6)
+		var(--font-family);
+
+	--font-size-p7: 14px;
+	--font-line-p7: 19px;
+	--font-p7: var(--regular) var(--font-size-p7) / var(--font-line-p7)
+		var(--font-family);
+
+	--font-size-p8: 12px;
+	--font-line-p8: 16px;
+	--font-p8: var(--regular) var(--font-size-p8) / var(--font-line-p8)
+		var(--font-family);
+
+	--font-size-p9: 10px;
+	--font-line-p9: 12px;
+	--font-p9: var(--regular) var(--font-size-p9) / var(--font-line-p9)
+		var(--font-family);
+
+	// Цвета
+	--accent-color: #3278ff;
+	--accent-hover-color: #075cff;
+	--accent-active-color: #004de3;
+	--secondary-color: #dbe7ff;
+	--secondary-hover-color: #adc9ff;
+	--secondary-active-color: #7aa7ff;
+	--grey-100: #f6faff;
+	--grey-200: #f0f4fa;
+	--grey-300: #dde5f3;
+	--grey-400: #ccd3e0;
+	--grey-500: #a7b5ce;
+	--grey-600: #687ca3;
+	--grey-700: #4a5d81;
+	--grey-800: #2e3d59;
+	--success-color: #43bc87;
+	--error-color: #f16094;
+	--base-0-color: #001235;
+	--base-1-color: #ffffff;
+	--title-color: #101010;
+
+	// Размеры
+}
