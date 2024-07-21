@@ -14,9 +14,9 @@ export const Table = (props: ITable) => {
 	const { head, body, foot, className } = props
 	return (
 		<table className={classNames(cls.table, {}, [className])}>
-			<div className={cls.head}>{head}</div>
-			<div className={cls.body}>{body}</div>
-			<div className={cls.foot}>{foot}</div>
+			<>{head}</>
+			<>{body}</>
+			<>{foot}</>
 		</table>
 	)
 }

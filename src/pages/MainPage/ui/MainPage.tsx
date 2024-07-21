@@ -4,10 +4,12 @@ import { Head } from '@/widgets/Table'
 import { Body } from '@/widgets/Table'
 import { Foot } from '@/widgets/Table'
 import { Titles } from '../model/enums/titles'
-import { useUserQuery } from '../api/userApi'
+import { userApi } from '../api/userApi'
 
 export const MainPage = () => {
-	const { data } = useUserQuery()
+	const { data, isLoading } = userApi.useGetUsersQuery(null)
+	if (isLoading) return <div className=''>Loading...</div>
+	console.log(data)
 	return (
 		<Page>
 			<Table
@@ -22,7 +24,7 @@ export const MainPage = () => {
 						]}
 					/>
 				}
-				body={<Body />}
+				body={<Body values={data?.users} />}
 				foot={<Foot />}
 			/>
 		</Page>

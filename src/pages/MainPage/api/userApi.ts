@@ -1,14 +1,14 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query'
-import { User } from '../model/types/user'
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { User, UsersList } from '../model/types/user'
 
 export const userApi = createApi({
-	reducerPath: 'users',
+	reducerPath: 'user',
 	baseQuery: fetchBaseQuery({
 		baseUrl: 'https://dummyjson.com/users',
 	}),
 	tagTypes: ['User'],
 	endpoints: build => ({
-		user: build.mutation<User, string>({
+		getUsers: build.query<UsersList, null>({
 			query: () => ({
 				url: `/`,
 				method: 'GET',
@@ -16,5 +16,3 @@ export const userApi = createApi({
 		}),
 	}),
 })
-
-export const { useUserMutation } = userApi

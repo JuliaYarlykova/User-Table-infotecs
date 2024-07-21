@@ -1,15 +1,23 @@
 import { classNames } from '@/shared/lib/ClassNames/ClassNames'
 import cls from './Row.module.scss'
 import { Cell } from '@/shared/ui/Cell'
+import { User } from '@/pages/MainPage/model/types/user'
 interface TR {
-	cells?: string[]
+	cells?: User
 	className?: string
 }
 export const Row = (props: TR) => {
 	const { cells, className } = props
 	return (
 		<tr className={classNames(cls.tr, {}, [className])}>
-			{cells && cells.map((cell, key) => <Cell text={cell} key={key} />)}
+			<Cell
+				text={`${cells?.firstName} ${cells?.lastName} ${cells?.maidenName}`}
+			/>
+			<Cell text={cells?.age} />
+			<Cell text={cells?.gender} />
+
+			<Cell text={cells?.phone} />
+			<Cell text={cells?.address.address} />
 		</tr>
 	)
 }

@@ -25,3 +25,7 @@ export type User = {
 	image: string
 	address: Adress
 }
+
+export type UsersList = {
+	users: User[]
+}
