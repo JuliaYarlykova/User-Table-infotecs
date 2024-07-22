@@ -1,8 +1,9 @@
 import { classNames } from '@/shared/lib/ClassNames/ClassNames'
 import cls from './Row.module.scss'
-import { HeaderElement } from '@/shared/ui/HeaderElement'
+import { HeaderElement } from '@/features/HeaderElement'
+import { ITitle } from '@/widgets/Table/ui/Head/Head'
 interface TR {
-	cells?: string[]
+	cells?: ITitle[]
 	className?: string
 }
 export const Row = (props: TR) => {

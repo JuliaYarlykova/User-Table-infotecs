@@ -1,0 +1,27 @@
+.th {
+	padding: 10px 20px;
+	width: 100%;
+	font-size: 30px;
+	font-weight: 500;
+	border: 1px solid;
+	position: relative;
+}
+.search {
+}
+
+.icon {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	transition: color 0.2s;
+	color: var(--grey-500);
+	&:hover {
+		color: var(--grey-800);
+	}
+}
+
+.btn {
+	outline: none;
+	border: none;
+	cursor: pointer;
+}

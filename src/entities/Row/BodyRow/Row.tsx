@@ -10,9 +10,9 @@ export const Row = (props: TR) => {
 	const { cells, className } = props
 	return (
 		<tr className={classNames(cls.tr, {}, [className])}>
-			<Cell
-				text={`${cells?.firstName} ${cells?.lastName} ${cells?.maidenName}`}
-			/>
+			<Cell text={cells?.lastName} />
+			<Cell text={cells?.firstName} />
+
 			<Cell text={cells?.age} />
 			<Cell text={cells?.gender} />
 

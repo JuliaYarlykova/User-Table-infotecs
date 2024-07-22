@@ -1,5 +1,7 @@
 export enum Titles {
-	FIO = 'ФИО',
+	LASTNAME = 'Фамилия',
+	FIRSTNAME = 'Имя',
+	MAIDENNAME = 'Отчество',
 	AGE = 'Возраст',
 	GENDER = 'Пол',
 	PHONENUMBER = 'Номер телефона',
