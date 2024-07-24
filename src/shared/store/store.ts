@@ -1,8 +1,8 @@
 import { userApi } from '@/pages/MainPage/api/userApi'
 import { configureStore } from '@reduxjs/toolkit'
 import { setupListeners } from '@reduxjs/toolkit/query'
-import { searchSlice } from './user/UserSearch.slice'
-import { searchApi } from '@/features/HeaderElement/api/searchApi'
+import { searchApi } from '@/features/Search/api/searchApi'
+import { userSlice } from './user/User.slice'
 
 const middleware = [searchApi.middleware, userApi.middleware]
 
@@ -10,7 +10,7 @@ export const store = configureStore({
 	reducer: {
 		[userApi.reducerPath]: userApi.reducer,
 		[searchApi.reducerPath]: searchApi.reducer,
-		search: searchSlice.reducer,
+		userSlice: userSlice.reducer,
 	},
 	middleware: getDefaultMiddleware => getDefaultMiddleware().concat(middleware),
 })

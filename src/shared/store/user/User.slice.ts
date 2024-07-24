@@ -1,17 +1,70 @@
-import { userApi } from '@/pages/MainPage/api/userApi'
 import { User } from '@/pages/MainPage/model/types/user'
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-const URL = 'https://dummyjson.com/users'
+export interface IState {
+	userList: User[] | undefined
+	tempUsers: User[] | undefined
+	sortedUser: User[] | undefined
+}
 
-const { data } = userApi.useGetUsersQuery(null)
+export enum ActionSorted {
+	UP = 'up',
+	DOWN = 'down',
+	DEFAULT = 'default',
+}
 
-const initialState: User[] | undefined = data?.users
+export type ActionSortedType = {
+	payload: string | undefined
+	type: ActionSorted
+}
+
+const initialState: IState = {
+	userList: [],
+	tempUsers: [],
+	sortedUser: [],
+}
 
 export const userSlice = createSlice({
-	name: 'user',
+	name: 'userSlice',
 	initialState,
 	reducers: {
-		sortedUser: () => {},
+		setAllUser: (state, action: PayloadAction<User[] | undefined>) => {
+			state.tempUsers = action.payload
+			state.userList = action.payload
+		},
+		setSearchUser: (state, action: PayloadAction<User[] | undefined>) => {
+			state.tempUsers = action.payload
+		},
+		sortedUserUp: (state, action: PayloadAction<ActionSortedType>) => {
+			const field = action.payload.payload as keyof User
+			const users = state.tempUsers?.slice()
+			switch (action.payload.type) {
+				case 'up':
+					console.log(users)
+					users?.sort((a, b) => {
+						if (a[field] < b[field]) return -1
+						if (a[field] > b[field]) return 1
+						return 0
+					})
+					state.sortedUser = users
+					break
+				case 'down':
+					users?.sort((a, b) => {
+						if (a[field] > b[field]) return -1
+						if (a[field] < b[field]) return 1
+						return 0
+					})
+					state.sortedUser = users
+					break
+				case 'default':
+					state.sortedUser = []
+					break
+
+				default:
+					return {
+						...state,
+					}
+			}
+		},
 	},
 })

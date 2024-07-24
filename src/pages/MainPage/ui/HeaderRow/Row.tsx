@@ -1,6 +1,6 @@
 import { classNames } from '@/shared/lib/ClassNames/ClassNames'
 import cls from './Row.module.scss'
-import { HeaderElement } from '@/features/HeaderElement'
+import { HeaderElement } from '../HeaderElement/HeaderElement'
 import { ITitle } from '@/widgets/Table/ui/Head/Head'
 interface TR {
 	cells?: ITitle[]
