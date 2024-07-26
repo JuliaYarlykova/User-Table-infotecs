@@ -47,6 +47,7 @@ export const userSlice = createSlice({
 						return 0
 					})
 					state.sortedUser = users
+					state.tempUsers = users
 					break
 				case 'down':
 					users?.sort((a, b) => {
@@ -54,10 +55,10 @@ export const userSlice = createSlice({
 						if (a[field] < b[field]) return 1
 						return 0
 					})
-					state.sortedUser = users
+					state.tempUsers = users
 					break
 				case 'default':
-					state.sortedUser = []
+					state.tempUsers = []
 					break
 
 				default:

@@ -1,6 +1,7 @@
 import { Titles } from '../enums/titles'
+import { ITitle } from '../types/title'
 
-export const titles = [
+export const titles: ITitle[] = [
 	{
 		title: Titles.LASTNAME,
 		value: 'lastName',

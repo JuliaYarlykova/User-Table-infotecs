@@ -6,6 +6,8 @@ import {
 	useRef,
 	useState,
 } from 'react'
+
+import cls from './Search.module.scss'
 type HTMLInputProps = Omit<
 	InputHTMLAttributes<HTMLInputElement>,
 	'value' | 'onChange'
@@ -30,7 +32,8 @@ export const Search = forwardRef<HTMLInputElement, ISearch>((props, ref) => {
 	return (
 		<input
 			type='text'
-			className={classNames('', {}, [className])}
+			placeholder='Введите текст'
+			className={classNames(cls.input, {}, [className])}
 			ref={ref}
 			value={setValue()}
 			onChange={onChangeValue}

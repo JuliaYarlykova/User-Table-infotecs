@@ -1,7 +1,10 @@
 .td {
-	border: 1px solid;
 	padding: 20px;
 	font-size: 16px;
 	text-overflow: ellipsis;
 	text-wrap: nowrap;
+	color: var(--base-0-color);
+	background-color: var(--violetgrey-color);
+
+	border-top: solid 10px var(--secondary-color);
 }

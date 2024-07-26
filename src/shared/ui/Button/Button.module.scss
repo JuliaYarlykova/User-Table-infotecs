@@ -1,0 +1,32 @@
+.button {
+	border: solid 1px #4a4647;
+
+	transition: color 0.2s ease-in, background-color 0.3s ease-in-out;
+	border-radius: 4px;
+	padding: 5px 10px;
+	display: flex;
+	align-items: center;
+
+	cursor: pointer;
+
+	&:focus {
+		outline: none;
+	}
+
+	&:disabled {
+		pointer-events: none;
+	}
+}
+
+.primary {
+	background-color: var(--primary-color);
+	color: var(--secondary-color);
+	&:hover {
+		background-color: var(--primary-hover-color);
+	}
+}
+
+.ghost {
+	background-color: transparent;
+	border: none;
+}

@@ -3,7 +3,7 @@ export const Header = () => {
 	return (
 		<header className={cls.header}>
 			<div className={cls.container}>
-				<h1>Users table</h1>
+				<h1>User table</h1>
 			</div>
 		</header>
 	)

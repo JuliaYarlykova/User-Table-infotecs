@@ -5,7 +5,8 @@ import { useDispatch } from 'react-redux'
 import cls from './Sort.module.scss'
 import { useCallback, useRef } from 'react'
 import { ActionSorted, userSlice } from '@/shared/store/user/User.slice'
-import { ITitle } from '@/widgets/Table/ui/Head/Head'
+import { Button } from '@/shared/ui/Button'
+import { ITitle } from '@/pages/MainPage/model/types/title'
 
 export type OptionsType = {
 	text: string
@@ -46,13 +47,13 @@ export const Sort = (props: ISort) => {
 	return (
 		<div className={classNames(cls.wrapper, {}, [className])}>
 			<Select options={OptionsList} name='sort' id='0' ref={ref} />
-			<button className={cls.btn} onClick={sortUser}>
+			<Button className={cls.btn} onClick={sortUser}>
 				<span
 					className={classNames('material-symbols-outlined', {}, [cls.icon])}
 				>
 					check
 				</span>
-			</button>
+			</Button>
 		</div>
 	)
 }

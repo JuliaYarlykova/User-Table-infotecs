@@ -7,4 +7,10 @@
 	margin: 0 auto;
 	text-align: center;
 	padding: 20px;
+
+	h1 {
+		font-family: var(--font-family);
+		font-size: 45px;
+		font-weight: 500;
+	}
 }

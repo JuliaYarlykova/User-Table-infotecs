@@ -24,6 +24,8 @@ export type User = {
 	birthDate: string
 	image: string
 	address: Adress
+	height: string
+	weight: string
 }
 
 export type UsersList = {

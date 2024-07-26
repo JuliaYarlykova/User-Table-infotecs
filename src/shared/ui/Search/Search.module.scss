@@ -1,0 +1,19 @@
+.input {
+	border: 1px solid var(--primary-hover-color);
+	background-color: var(--secondary-hover-color);
+	transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+	border-radius: 4px;
+	color: var(--violetgrey-hover-color);
+	padding: 0 15px;
+	font-size: 14px;
+	&:focus,
+	&:focus-visible {
+		outline: none;
+	}
+	&:hover:not(:disabled):not(:read-only) {
+		box-shadow: 0 4px 30px 0 var(--grey-secondary-color-50pct);
+	}
+	&::placeholder {
+		color: var(--primary-hover-color);
+	}
+}

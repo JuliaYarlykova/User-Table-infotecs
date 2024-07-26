@@ -1,9 +1,10 @@
 import { classNames } from '@/shared/lib/ClassNames/ClassNames'
 import cls from './HeaderElement.module.scss'
-import { ITitle } from '@/widgets/Table/ui/Head/Head'
 import { SearchModal } from '@/features/Search'
 import { useState } from 'react'
 import { Sort } from '@/features/Sort'
+import { Button } from '@/shared/ui/Button'
+import { ITitle } from '../../model/types/title'
 interface TH {
 	text?: ITitle
 	className?: string
@@ -14,13 +15,17 @@ export const HeaderElement = (props: TH) => {
 	return (
 		<th className={classNames(cls.th, {}, [className])}>
 			<div className={cls.wrapper}>
-				<button className={cls.btn} onClick={() => setOpen(true)}>
+				<Button
+					className={classNames(cls.btn, {}, [])}
+					onClick={() => setOpen(true)}
+					variant='ghost'
+				>
 					<span
 						className={classNames('material-symbols-outlined', {}, [cls.icon])}
 					>
 						search
 					</span>
-				</button>
+				</Button>
 				{text?.title}
 				<SearchModal text={text} isOpen={isOpen} onOpen={setOpen} />
 				{(text?.title === 'Фамилия' ||

@@ -3,8 +3,10 @@ import { Modal } from '@/shared/ui/Modal'
 import { memo, useCallback, useEffect, useRef, useState } from 'react'
 import { searchApi } from '../api/searchApi'
 import { useDispatch } from 'react-redux'
-import { ITitle } from '@/widgets/Table/ui/Head/Head'
 import { userSlice } from '@/shared/store/user/User.slice'
+import { Button } from '@/shared/ui/Button'
+import cls from './SearchModal.module.scss'
+import { ITitle } from '@/pages/MainPage/model/types/title'
 
 interface ISearchModal {
 	text?: ITitle
@@ -45,9 +47,9 @@ export const SearchModal = memo((props: ISearchModal) => {
 	}, [data])
 	return (
 		<Modal isOpen={isOpen} onClose={() => onOpen(false)}>
-			<div>
+			<div className={cls.modal}>
 				<Search ref={ref} />
-				<button onClick={sendData}>Поиск</button>
+				<Button onClick={sendData}>Поиск</Button>
 			</div>
 		</Modal>
 	)
