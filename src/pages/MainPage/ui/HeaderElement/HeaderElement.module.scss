@@ -4,11 +4,11 @@
 	font-size: 30px;
 	font-weight: 500;
 	border-left: 10px solid var(--secondary-color);
+	position: relative;
+	background-color: var(--liver-color);
 	&:first-child {
 		border-left: none;
 	}
-	position: relative;
-	background-color: var(--liver-color);
 }
 
 .wrapper {
