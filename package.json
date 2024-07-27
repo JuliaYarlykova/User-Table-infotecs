@@ -2,7 +2,7 @@
 	"name": "user-table",
 	"private": true,
 	"version": "0.0.0",
-	"homepage": "https://JuliaYarlykova.github.io/User-Table-infotecs",
+	"homepage": "https://juliayarlykova.github.io/User-Table-infotecs",
 	"type": "module",
 	"scripts": {
 		"predeploy": "npm run build",
