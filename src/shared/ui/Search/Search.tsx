@@ -1,11 +1,5 @@
 import { classNames } from '@/shared/lib/ClassNames/ClassNames'
-import {
-	ChangeEvent,
-	forwardRef,
-	InputHTMLAttributes,
-	useRef,
-	useState,
-} from 'react'
+import { ChangeEvent, forwardRef, InputHTMLAttributes, useState } from 'react'
 
 import cls from './Search.module.scss'
 type HTMLInputProps = Omit<
@@ -20,7 +14,7 @@ interface ISearch extends HTMLInputProps {
 }
 
 export const Search = forwardRef<HTMLInputElement, ISearch>((props, ref) => {
-	const { className, value, onChange } = props
+	const { className, onChange } = props
 	const [localValue, setLocalValue] = useState<string>('')
 
 	const setValue = () => localValue

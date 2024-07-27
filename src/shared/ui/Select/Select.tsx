@@ -16,7 +16,7 @@ interface ISelect extends HTMLSelectProps {
 }
 
 export const Select = forwardRef<HTMLSelectElement, ISelect>((props, ref) => {
-	const { options, classname, name, id } = props
+	const { options, name, id } = props
 	return (
 		<select name={name} id={id} className={cls.select} ref={ref}>
 			{options &&
