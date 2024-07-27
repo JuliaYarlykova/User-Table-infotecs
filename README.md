@@ -8,7 +8,7 @@ ts, react, scss, redux, rtk query
 +
 библиотки motion и material-symbols
 
-##Запуск проекта
+## Запуск проекта
 
 - Клонировать репозиторий: git clone https://github.com/JuliaYarlykova/.git
 - Установить зависимости: npm install
