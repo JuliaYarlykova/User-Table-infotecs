@@ -1,17 +1,15 @@
-import { classNames } from '@/shared/lib/ClassNames/ClassNames'
-import { Select } from '@/shared/ui/Select'
+//Компонент с логикой сортировки в определенных столбцах таблицы
+
+import { useCallback, useRef } from 'react'
 import { useDispatch } from 'react-redux'
 
-import cls from './Sort.module.scss'
-import { useCallback, useRef } from 'react'
+import { classNames } from '@/shared/lib/ClassNames/ClassNames'
 import { ActionSorted, userSlice } from '@/shared/store/user/User.slice'
+import { ITitle } from '@/shared/types/title'
 import { Button } from '@/shared/ui/Button'
-import { ITitle } from '@/pages/MainPage/model/types/title'
+import { Select } from '@/shared/ui/Select'
 
-export type OptionsType = {
-	text: string
-	value: ActionSorted
-}
+import cls from './Sort.module.scss'
 
 const OptionsList = [
 	{
@@ -43,7 +41,7 @@ export const Sort = (props: ISort) => {
 				type: ref.current?.value as ActionSorted,
 			})
 		)
-	}, [dispatch])
+	}, [dispatch, text.value])
 	return (
 		<div className={classNames(cls.wrapper, {}, [className])}>
 			<Select options={OptionsList} name='sort' id='0' ref={ref} />

@@ -14,6 +14,9 @@
 	},
 	"dependencies": {
 		"@reduxjs/toolkit": "^2.2.6",
+		"eslint-plugin-import": "^2.29.1",
+		"eslint-plugin-react": "^7.35.0",
+		"eslint-plugin-zavalition-fsd": "^0.1.9",
 		"material-symbols": "^0.21.2",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1"

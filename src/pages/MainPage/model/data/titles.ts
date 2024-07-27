@@ -1,5 +1,6 @@
 import { Titles } from '../enums/titles'
-import { ITitle } from '../types/title'
+
+import { ITitle } from '@/entities/Title'
 
 export const titles: ITitle[] = [
 	{

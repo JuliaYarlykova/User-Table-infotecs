@@ -1,6 +1,17 @@
 import { forwardRef, SelectHTMLAttributes } from 'react'
+
 import cls from './Select.module.scss'
-import { OptionsType } from '@/features/Sort/ui/Sort'
+
+enum ActionSorted {
+	UP = 'up',
+	DOWN = 'down',
+	DEFAULT = 'default',
+}
+
+export type OptionsType = {
+	text: string
+	value: ActionSorted
+}
 
 type HTMLSelectProps = Omit<
 	SelectHTMLAttributes<HTMLSelectElement>,
@@ -15,6 +26,7 @@ interface ISelect extends HTMLSelectProps {
 	onChange?: () => void
 }
 
+// eslint-disable-next-line react/display-name
 export const Select = forwardRef<HTMLSelectElement, ISelect>((props, ref) => {
 	const { options, name, id } = props
 	return (

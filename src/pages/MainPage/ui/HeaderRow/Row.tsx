@@ -1,7 +1,10 @@
-import { classNames } from '@/shared/lib/ClassNames/ClassNames'
-import cls from './Row.module.scss'
+//Строка таблицы, обращается к ячейкам
 import { HeaderElement } from '../HeaderElement/HeaderElement'
-import { ITitle } from '../../model/types/title'
+
+import { classNames } from '@/shared/lib/ClassNames/ClassNames'
+import { ITitle } from '@/shared/types/title'
+
+import cls from './Row.module.scss'
 interface TR {
 	cells?: ITitle[]
 	className?: string

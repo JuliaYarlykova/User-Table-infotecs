@@ -1,20 +1,24 @@
-import { Table } from '@/shared/layout/TableLayout/TableLayout'
-import { Page } from '@/widgets/Page/ui/Page'
-import { userApi } from '../../api/userApi'
+//главная страница с таблицей пользователей
+
 import { memo, useEffect, useState } from 'react'
-import { User } from '../../model/types/user'
 import { useSelector } from 'react-redux'
-import { RootState } from '@/shared/store/store'
 import { useDispatch } from 'react-redux'
+
+import { userApi } from '../../api/userApi'
+import { titles } from '../../model/data/titles'
+import { BRow } from '../BodyRow/Row'
+import { HRow } from '../HeaderRow/Row'
+
+import { Table } from '@/shared/layout/TableLayout/TableLayout'
+import { RootState } from '@/shared/store/store'
+import { userSlice } from '@/shared/store/user/User.slice'
+import { User } from '@/shared/types/user'
+import { Button } from '@/shared/ui/Button/Button'
+import { Page } from '@/widgets/Page'
 
 import cls from './MainPage.module.scss'
 
-import { titles } from '../../model/data/titles'
-import { userSlice } from '@/shared/store/user/User.slice'
-import { Button } from '@/shared/ui/Button/Button'
-import { HRow } from '../HeaderRow/Row'
-import { BRow } from '../BodyRow/Row'
-
+// eslint-disable-next-line react/display-name
 export const MainPage = memo(() => {
 	const [users, setUsers] = useState<User[] | undefined>([])
 	const { data, isLoading } = userApi.useGetUsersQuery(null)
@@ -28,7 +32,7 @@ export const MainPage = memo(() => {
 	)
 	useEffect(() => {
 		dispatch(userSlice.actions.setAllUser(data?.users))
-	}, [data])
+	}, [data, dispatch])
 
 	useEffect(() => {
 		setUsers(sortedData)

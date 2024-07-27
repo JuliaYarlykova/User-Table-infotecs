@@ -1,7 +1,8 @@
 'use client'
 import { AnimatePresence, motion } from 'framer-motion'
-import cls from './Modal.module.scss'
 import { ReactNode } from 'react'
+
+import cls from './Modal.module.scss'
 
 interface IModal {
 	isOpen: boolean

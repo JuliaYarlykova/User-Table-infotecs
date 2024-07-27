@@ -3,7 +3,7 @@ module.exports = {
 		browser: true,
 		es2021: true,
 	},
-	extends: ['plugin:react/recommended', 'airbnb', 'prettier'],
+	extends: ['plugin:react/recommended'],
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
 		ecmaFeatures: {
@@ -17,11 +17,9 @@ module.exports = {
 		'@typescript-eslint',
 		'react-hooks',
 		'zavalition-fsd',
-		'unused-imports',
 		'import',
 	],
 	rules: {
-		'unused-imports/no-unused-imports': 'error',
 		'react/jsx-filename-extension': [
 			2,
 			{ extensions: ['.js', '.jsx', '.tsx'] },

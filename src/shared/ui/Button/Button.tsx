@@ -1,5 +1,7 @@
-import { classNames } from '@/shared/lib/ClassNames/ClassNames'
 import { ButtonHTMLAttributes, ReactNode } from 'react'
+
+import { classNames } from '@/shared/lib/ClassNames/ClassNames'
+
 import cls from './Button.module.scss'
 
 type ButtonVariant = 'ghost' | 'primary'

@@ -1,5 +1,6 @@
-import { classNames } from '@/shared/lib/ClassNames/ClassNames'
 import { ChangeEvent, forwardRef, InputHTMLAttributes, useState } from 'react'
+
+import { classNames } from '@/shared/lib/ClassNames/ClassNames'
 
 import cls from './Search.module.scss'
 type HTMLInputProps = Omit<
@@ -13,6 +14,7 @@ interface ISearch extends HTMLInputProps {
 	onChange?: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
+// eslint-disable-next-line react/display-name
 export const Search = forwardRef<HTMLInputElement, ISearch>((props, ref) => {
 	const { className, onChange } = props
 	const [localValue, setLocalValue] = useState<string>('')

@@ -1,10 +1,14 @@
-import { classNames } from '@/shared/lib/ClassNames/ClassNames'
-import cls from './HeaderElement.module.scss'
-import { SearchModal } from '@/features/Search'
+//ячейка хедера таблицы, обращается к поиску и сортировке
 import { useState } from 'react'
+
+import { SearchModal } from '@/features/Search'
 import { Sort } from '@/features/Sort'
+import { classNames } from '@/shared/lib/ClassNames/ClassNames'
+import { ITitle } from '@/shared/types/title'
 import { Button } from '@/shared/ui/Button'
-import { ITitle } from '../../model/types/title'
+
+import cls from './HeaderElement.module.scss'
+
 interface TH {
 	text?: ITitle
 	className?: string

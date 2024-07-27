@@ -1,4 +1,5 @@
 import { classNames } from '@/shared/lib/ClassNames/ClassNames'
+
 import cls from './Cell.module.scss'
 interface TD {
 	text?: string | number

@@ -1,5 +1,6 @@
-import { classNames } from '@/shared/lib/ClassNames/ClassNames'
 import { ReactNode } from 'react'
+
+import { classNames } from '@/shared/lib/ClassNames/ClassNames'
 
 import cls from './TableLayout.module.scss'
 

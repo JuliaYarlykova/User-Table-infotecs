@@ -1,7 +1,8 @@
 import { ReactNode } from 'react'
 
-import cls from './Page.module.scss'
 import { classNames } from '@/shared/lib/ClassNames/ClassNames'
+
+import cls from './Page.module.scss'
 
 interface PageProps {
 	className?: string

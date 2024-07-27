@@ -1,18 +1,25 @@
-import { Search } from '@/shared/ui/Search'
-import { Modal } from '@/shared/ui/Modal'
+//Модальное окно поиска
+//Компонент содержит логику поиска информации в колонке
+
 import { memo, useCallback, useEffect, useRef, useState } from 'react'
-import { searchApi } from '../api/searchApi'
 import { useDispatch } from 'react-redux'
+
+import { searchApi } from '../api/searchApi'
+
 import { userSlice } from '@/shared/store/user/User.slice'
+import { ITitle } from '@/shared/types/title'
 import { Button } from '@/shared/ui/Button'
+import { Modal } from '@/shared/ui/Modal'
+import { Search } from '@/shared/ui/Search'
+
 import cls from './SearchModal.module.scss'
-import { ITitle } from '@/pages/MainPage/model/types/title'
 
 interface ISearchModal {
 	text?: ITitle
 	isOpen: boolean
 	onOpen: (arg: boolean) => void
 }
+// eslint-disable-next-line react/display-name
 export const SearchModal = memo((props: ISearchModal) => {
 	const { text, isOpen, onOpen } = props
 	const dispatch = useDispatch()
@@ -33,18 +40,18 @@ export const SearchModal = memo((props: ISearchModal) => {
 			value: ref.current?.value,
 			key: text?.value,
 		})
-	}, [ref.current?.value])
+	}, [text?.value])
 
 	useEffect(() => {
 		if (dataValue.value) {
 			refetch()
 		}
-	}, [dataValue.value, dispatch])
+	}, [dataValue.value, dispatch, refetch])
 
 	useEffect(() => {
-		if (data) dispatch(userSlice.actions.setSearchUser(data?.users))
+		if (data) dispatch(userSlice.actions.setSearchUser(data.users))
 		onOpen(false)
-	}, [data])
+	}, [data, dispatch, onOpen])
 	return (
 		<Modal isOpen={isOpen} onClose={() => onOpen(false)}>
 			<div className={cls.modal}>

@@ -1,5 +1,6 @@
-import { User } from '@/pages/MainPage/model/types/user'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+
+import { User } from '@/shared/types/user'
 
 export interface IState {
 	userList: User[] | undefined

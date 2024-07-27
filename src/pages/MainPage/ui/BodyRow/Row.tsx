@@ -1,9 +1,14 @@
-import { classNames } from '@/shared/lib/ClassNames/ClassNames'
-import cls from './Row.module.scss'
-import { Cell } from '@/shared/ui/Cell'
-import { User } from '@/pages/MainPage/model/types/user'
+//Содержит строку тела таблицы, обащается к модальному окну пользователя
+
 import { useState } from 'react'
+
 import { UserModal } from '@/features/User'
+import { classNames } from '@/shared/lib/ClassNames/ClassNames'
+import { User } from '@/shared/types/user'
+import { Cell } from '@/shared/ui/Cell'
+
+import cls from './Row.module.scss'
+
 interface TR {
 	cells?: User
 	className?: string

@@ -1,5 +1,8 @@
-import { Modal } from '@/shared/ui/Modal'
+//модальное окно с подробной информацие о пользователе (в дальнейшем может обращаться к логике редактирования и создания, поэтому находится в фичах)
+
 import { userApi } from '../../api/userApi'
+
+import { Modal } from '@/shared/ui/Modal'
 
 interface IUserModal {
 	onOpen: (arg: boolean) => void
